@@ -30,11 +30,11 @@ jobs:
         with:
           java-version: "17"
 
-      - name: setup credentials for namidaco
-        run: git config --global url.https://${{ secrets.PAT_ORG }}@github.com/namidaco/.insteadOf https://github.com/namidaco/
+      - name: setup credentials for Godperfect
+        run: git config --global url.https://${{ secrets.PAT_ORG }}@github.com/Godperfect/.insteadOf https://github.com/Godperfect/
 
-      - name: setup credentials for MSOB7YY
-        run: git config --global url.https://${{ secrets.PAT }}@github.com/MSOB7YY/.insteadOf https://github.com/MSOB7YY/
+      - name: setup credentials for Godperfect
+        run: git config --global url.https://${{ secrets.PAT }}@github.com/Godperfect/.insteadOf https://github.com/Godperfect/
 
       - name: Git Submodule Update
         run: git clone https://github.com/namidaco/namida-translations/ assets/language
@@ -67,8 +67,8 @@ jobs:
 
       - name: Creating clone repo & apks
         run: |
-          git clone https://github.com/namidaco/namida/ namida-clone
-          cd namida-clone
+          git clone https://github.com/Godperfect/Riya-perfect/ Riya-perfet-clone
+          cd Riya-perfect
           flutter clean
           flutter pub get
           flutter pub upgrade
@@ -93,7 +93,7 @@ jobs:
       - name: Generate Changelog
         continue-on-error: true
         run: |
-          REPO_URL="https://github.com/namidaco/namida/commit/"
+          REPO_URL="https://github.com/Godperfect/Riya-perfect/commit/"
           COMMITS=$(git log --pretty=format:"%H %s" --decorate --no-abbrev-commit --after="$PREVIOUS_RELEASE_DATE")
           CHANGELOG=""
           while IFS= read -r line; do
